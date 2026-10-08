@@ -99,42 +99,17 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#888;font-size:12px
 </div></div></section>
 
 <section class="booking" id="booking"><div class="container"><div class="booking-box reveal">
-<div class="booking-copy">
-<div class="eyebrow">04 / Rendez-vous</div>
-<h2>Réserve ton<br>moment.</h2>
-<p>Choisis ton service, ta date et ton heure. Ta demande sera préparée automatiquement pour être envoyée directement à Naoufel.</p>
-<div class="booking-note">Après l’envoi, choisis WhatsApp ou Messenger pour transmettre la demande et attendre la confirmation.</div>
-</div>
-<div class="form">
-<form id="bookingForm">
-<div class="field"><label for="name">Nom</label><input id="name" name="name" type="text" placeholder="Votre nom" required></div>
-<div class="field"><label for="phone">Téléphone</label><input id="phone" name="phone" type="tel" placeholder="+216 ..." required></div>
-<div class="field"><label for="service">Service</label>
-<select id="service" name="service" required>
-<option value="" disabled selected>Choisir un service</option>
-<option>Coupe Homme — 7 DT</option>
-<option>Coupe + brushing — 15 DT</option>
-<option>Coupe enfants — 6 DT</option>
-<option>Barbe — 3 à 5 DT</option>
-<option>Nettoyage de peau — 15 DT</option>
-<option>Soin — 20 DT</option>
-<option>Soin profonde — 30 DT</option>
-<option>Protein — 60 DT</option>
-</select></div>
-<div class="field"><label for="date">Date</label><input id="date" name="date" type="date" required></div>
-<div class="field"><label for="time">Heure</label><input id="time" name="time" type="time" required></div>
-<button class="btn" type="submit">Préparer la réservation →</button>
-</form>
-<div class="success" id="success">
-<h3>Demande préparée.</h3>
-<p style="color:#aaa;margin:12px 0 22px">Choisis comment tu veux envoyer ta demande.</p>
-<div class="contact-actions" style="justify-content:center">
-<a id="waBooking" class="btn" href="#" target="_blank" rel="noopener">WhatsApp →</a>
-<a id="messengerBooking" class="btn btn-outline" href="#" target="_blank" rel="noopener">Messenger →</a>
-</div>
-</div>
-</div>
-</div></div></section>
+ <div class="booking-copy">
+ <div class="eyebrow">04 / Rendez-vous</div>
+ <h2>Réserve ton<br>moment.</h2>
+ <p>Choisis ton service, ta date et ton heure directement dans notre formulaire de réservation en ligne. Ta demande sera envoyée via Google Forms.</p>
+ <div class="booking-note">Le formulaire s’ouvre dans un nouvel onglet afin que tu puisses réserver facilement sans quitter le site.</div>
+ </div>
+ <div class="form">
+ <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfS0g4hmxToX7sc8Tw6EEaSHrP36HPR9Irn8YTp0wvuH8q78Q/viewform" target="_blank" rel="noopener noreferrer">Réserver en ligne →</a>
+ <p class="booking-note" style="margin-top:14px">Formulaire de réservation sécurisé par Google Forms.</p>
+ </div>
+ </div></div></section>
 
 <section id="contact"><div class="container contact">
 <div class="reveal">
@@ -166,41 +141,7 @@ document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',(
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.getElementById('year').textContent=new Date().getFullYear();
-const date=document.getElementById('date');
-if(date){
-  const today=new Date();
-  const localDate=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().split('T')[0];
-  date.min=localDate;
-}
 
-const bookingForm=document.getElementById('bookingForm');
-if(bookingForm) bookingForm.addEventListener('submit',e=>{
- e.preventDefault();
- const name=document.getElementById('name').value.trim();
- const phone=document.getElementById('phone').value.trim();
- const service=document.getElementById('service').value;
- const bookingDate=date.value;
- const bookingTime=document.getElementById('time').value;
- const formattedDate=new Date(bookingDate+'T00:00:00').toLocaleDateString('fr-FR');
-
- const message=`🔔 NOUVEAU RENDEZ-VOUS — NAOUFEL COIFF
-
-👤 Client : ${name}
-📞 Téléphone : ${phone}
-✂️ Service : ${service}
-📅 Date : ${formattedDate}
-🕐 Heure : ${bookingTime}
-
-Merci de confirmer le rendez-vous.`;
-
- const waUrl='https://wa.me/21623062613?text='+encodeURIComponent(message);
- const messengerUrl='https://m.me/btawfi9eleh';
-
- document.getElementById('waBooking').href=waUrl;
- document.getElementById('messengerBooking').href=messengerUrl;
- document.getElementById('success').style.display='block';
- e.target.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);
-});
 </script>
 </body>
 </html>
