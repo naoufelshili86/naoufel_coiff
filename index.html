@@ -53,13 +53,55 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#888;font-size:12px
 .reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}
 @media(max-width:900px){.navlinks{display:none;position:absolute;top:68px;left:20px;right:20px;background:#111;border:1px solid var(--line);padding:25px;flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu{display:block}.service-grid{grid-template-columns:1fr 1fr}.about-grid,.booking-box,.contact{grid-template-columns:1fr}.form{border-left:0;border-top:1px solid var(--line)}.about-img{height:470px}.gallery-grid{grid-auto-rows:190px}}
 @media(max-width:560px){.container{width:min(calc(100% - 28px),var(--max))}.hero-content{padding-left:14px;padding-right:14px}.hero p{font-size:15px}.service-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:18px}.booking-copy,.form{padding:35px 24px}.gallery-grid{display:grid;grid-template-columns:1fr;grid-auto-rows:270px}.g1,.g2,.g3,.g4,.g5{grid-column:span 1;grid-row:span 1}.info{grid-template-columns:1fr}.footer-inner{flex-direction:column}.about-img{height:380px}.about-img:after{right:10px}}
+
+/* Boutique intégrée */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--bg:#0b0b0b;--surface:#121212;--card:#171717;--text:#f5f1e8;--muted:#aaa49a;--gold:#c9a96a;--line:rgba(255,255,255,.1);--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.6;overflow-x:hidden}a{text-decoration:none;color:inherit}.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(11,11,11,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:18px 0}.nav-inner{display:flex;align-items:center;justify-content:space-between}.logo{font-family:"Playfair Display",serif;font-size:25px;letter-spacing:.08em}.logo span{color:var(--gold)}.navlinks{display:flex;gap:26px;align-items:center}.navlinks a{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#d4d0c7}.navlinks a:hover{color:var(--gold)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--gold);background:var(--gold);color:#111;padding:13px 18px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:11px;cursor:pointer;transition:.3s}.btn:hover{transform:translateY(-2px);background:#dfc38b}.btn-outline{background:transparent;color:var(--text)}.menu{display:none;background:none;border:0;color:white;font-size:28px;cursor:pointer}
+.hero{padding:92px 0 70px;background:radial-gradient(circle at 80% 20%,rgba(201,169,106,.15),transparent 30%),linear-gradient(180deg,#111,#0b0b0b)}.eyebrow{color:var(--gold);letter-spacing:.28em;text-transform:uppercase;font-size:12px;margin-bottom:18px}.hero h1{font-family:"Playfair Display",serif;font-size:clamp(52px,8vw,90px);line-height:.98;font-weight:600;max-width:850px}.hero h1 em{color:var(--gold);font-style:normal}.hero p{max-width:600px;color:var(--muted);margin-top:24px;font-size:16px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:30px auto 22px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:#151515;color:#ddd;border:1px solid var(--line);padding:9px 14px;cursor:pointer;font:inherit;font-size:12px}.filter.active,.filter:hover{border-color:var(--gold);color:var(--gold)}.count{font-size:12px;color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-bottom:90px}.product{background:var(--surface);border:1px solid var(--line);transition:.3s;overflow:hidden}.product:hover{transform:translateY(-4px);border-color:rgba(201,169,106,.55)}.product-image{height:300px;background:#171717;overflow:hidden}.product-image img{width:100%;height:100%;object-fit:cover;transition:.5s;filter:saturate(.78)}.product:hover img{transform:scale(1.04);filter:saturate(1)}.product-body{padding:22px}.category{font-size:10px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase}.product h2{font-family:"Playfair Display",serif;font-size:26px;margin:8px 0}.product p{color:var(--muted);font-size:13px;min-height:42px}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}.price{font-size:20px;color:var(--gold);font-weight:700;white-space:nowrap}.order{font-size:10px;padding:11px 12px;white-space:nowrap}.note{color:#8f8a81;font-size:12px;margin:-58px 0 75px}.empty{display:none;color:var(--muted);padding:40px 0}footer{border-top:1px solid var(--line);padding:30px 0;color:#888;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.product-image{height:260px}.navlinks{gap:14px}.navlinks a{font-size:10px}}
+@media(max-width:620px){.container{width:min(calc(100% - 28px),var(--max))}.nav-inner{align-items:flex-start}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:14px;right:14px;background:#111;border:1px solid var(--line);padding:22px;flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.navlinks a{font-size:12px}.hero{padding:65px 0 50px}.toolbar{align-items:flex-start;flex-direction:column}.products{grid-template-columns:1fr;gap:14px}.product-image{height:320px}.product-body{padding:20px}.note{margin-top:-58px}.footer-inner{flex-direction:column}}
+
+
+.store-area{padding:0;background:#0b0b0b}
+.store-area .store-hero{padding:92px 0 55px;background:radial-gradient(circle at 80% 20%,rgba(201,169,106,.15),transparent 30%),linear-gradient(180deg,#111,#0b0b0b)}
+.store-area .store-hero .container{width:min(calc(100% - 40px),var(--max));margin:auto}
+.store-area .store-hero h1{font-family:"Playfair Display",serif;font-size:clamp(52px,8vw,90px);line-height:.98;font-weight:600;max-width:850px}
+.store-area .store-hero h1 em{color:var(--gold);font-style:normal}
+.store-area .store-hero p{max-width:600px;color:var(--muted);margin-top:24px;font-size:16px}
+.store-area .toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:30px auto 22px}
+.store-area .filters{display:flex;gap:8px;flex-wrap:wrap}
+.store-area .filter{background:#151515;color:#ddd;border:1px solid var(--line);padding:9px 14px;cursor:pointer;font:inherit;font-size:12px}
+.store-area .filter.active,.store-area .filter:hover{border-color:var(--gold);color:var(--gold)}
+.store-area .count{font-size:12px;color:var(--muted)}
+.store-area .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-bottom:90px}
+.store-area .product{background:var(--surface);border:1px solid var(--line);transition:.3s;overflow:hidden}
+.store-area .product:hover{transform:translateY(-4px);border-color:rgba(201,169,106,.55)}
+.store-area .product-image{height:300px;background:#171717;overflow:hidden}
+.store-area .product-image img{width:100%;height:100%;object-fit:cover;transition:.5s;filter:saturate(.78)}
+.store-area .product:hover img{transform:scale(1.04);filter:saturate(1)}
+.store-area .product-body{padding:22px}
+.store-area .category{font-size:10px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase}
+.store-area .product h2{font-family:"Playfair Display",serif;font-size:26px;margin:8px 0}
+.store-area .product p{color:var(--muted);font-size:13px;min-height:42px}
+.store-area .product-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}
+.store-area .price{font-size:20px;color:var(--gold);font-weight:700;white-space:nowrap}
+.store-area .order{font-size:10px;padding:11px 12px;white-space:nowrap}
+.store-area .note{color:#8f8a81;font-size:12px;margin:-58px 0 75px}
+.store-area .empty{display:none;color:var(--muted);padding:40px 0}
+@media(max-width:850px){.store-area .products{grid-template-columns:repeat(2,minmax(0,1fr))}.store-area .product-image{height:260px}}
+@media(max-width:620px){.store-area .store-hero{padding:65px 0 50px}.store-area .toolbar{align-items:flex-start;flex-direction:column}.store-area .products{grid-template-columns:1fr;gap:14px}.store-area .product-image{height:320px}.store-area .product-body{padding:20px}.store-area .note{margin-top:-58px}}
+
 </style>
 </head>
 <body>
 <nav class="nav" id="nav"><div class="container nav-inner">
 <a class="logo" href="#home">NAOUFEL <span>COIFF</span></a>
 <div class="navlinks" id="navlinks">
-<a href="#home">Accueil</a><a href="#services">Services</a><a href="#about">À propos</a><a href="#gallery">Galerie</a><a href="#contact">Contact</a><a class="btn" href="#booking">Réserver</a>
+<a href="#home">Accueil</a><a href="#services">Services</a><a href="#about">À propos</a><a href="#gallery">Galerie</a><a href="#store">Boutique</a><a href="#contact">Contact</a><a class="btn" href="#booking">Réserver</a>
 </div><button class="menu" id="menu" aria-label="Menu">☰</button>
 </div></nav>
 
@@ -111,6 +153,18 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#888;font-size:12px
  </div>
  </div></div></section>
 
+<section class="store-area" id="store"><header class="store-hero"><div class="container"><div class="eyebrow">Naoufel Coiff / Boutique</div><h1>Le style continue<br/><em>à la maison.</em></h1><p>Découvre notre sélection de produits pour entretenir ta coupe, coiffer tes cheveux et prendre soin de ta barbe, même après ton passage au salon.</p></div></header>
+<section class="container"><div class="toolbar"><div aria-label="Filtrer les produits" class="filters"><button class="filter active" data-filter="all">Tout</button><button class="filter" data-filter="cheveux">Cheveux</button><button class="filter" data-filter="visage">Visage</button><button class="filter" data-filter="parfum">Parfum</button></div><span class="count" id="count">6 produits</span></div>
+<div class="products" id="products">
+<article class="product" data-category="visage"><div class="product-image"><img alt="Black Mask" src="black mask.jpeg"></div><div class="product-body"><span class="category">Visage</span><h2>Black Mask</h2><div class="product-bottom"><a class="btn order" href="https://wa.me/21623062613?text=Bonjour%20Naoufel%2C%20je%20souhaite%20commander%20Black%20Mask." target="_blank" rel="noopener noreferrer">Commander ↗</a></div></div></article>
+<article class="product" data-category="cheveux"><div class="product-image"><img alt="Elegance" src="elegance 3.jpeg"></div><div class="product-body"><span class="category">Cheveux</span><h2>Elegance</h2><div class="product-bottom"><a class="btn order" href="https://wa.me/21623062613?text=Bonjour%20Naoufel%2C%20je%20souhaite%20commander%20Elegance." target="_blank" rel="noopener noreferrer">Commander ↗</a></div></div></article>
+<article class="product" data-category="cheveux"><div class="product-image"><img alt="Hair Gel" src="hair gel.jpeg"></div><div class="product-body"><span class="category">Cheveux</span><h2>Hair Gel</h2><div class="product-bottom"><a class="btn order" href="https://wa.me/21623062613?text=Bonjour%20Naoufel%2C%20je%20souhaite%20commander%20Hair%20Gel." target="_blank" rel="noopener noreferrer">Commander ↗</a></div></div></article>
+<article class="product" data-category="parfum"><div class="product-image"><img alt="La Rose" src="la rose.jpeg"></div><div class="product-body"><span class="category">Parfum</span><h2>La Rose</h2><div class="product-bottom"><a class="btn order" href="https://wa.me/21623062613?text=Bonjour%20Naoufel%2C%20je%20souhaite%20commander%20La%20Rose." target="_blank" rel="noopener noreferrer">Commander ↗</a></div></div></article>
+<article class="product" data-category="cheveux"><div class="product-image"><img alt="Serum" src="serum.jpeg"></div><div class="product-body"><span class="category">Cheveux</span><h2>Serum</h2><div class="product-bottom"><a class="btn order" href="https://wa.me/21623062613?text=Bonjour%20Naoufel%2C%20je%20souhaite%20commander%20Serum." target="_blank" rel="noopener noreferrer">Commander ↗</a></div></div></article>
+<article class="product" data-category="cheveux"><div class="product-image"><img alt="Styling Creme" src="styling creme.jpeg"></div><div class="product-body"><span class="category">Cheveux</span><h2>Styling Creme</h2><div class="product-bottom"><a class="btn order" href="https://wa.me/21623062613?text=Bonjour%20Naoufel%2C%20je%20souhaite%20commander%20Styling%20Creme." target="_blank" rel="noopener noreferrer">Commander ↗</a></div></div></article>
+</div><p class="empty" id="empty">Aucun produit dans cette catégorie pour le moment.</p><p class="note">Pour connaître la disponibilité, contacte-nous directement sur WhatsApp.</p></section>
+</section>
+
 <section id="contact"><div class="container contact">
 <div class="reveal">
 <div class="eyebrow">05 / Contact</div><h2>On se voit<br>au salon.</h2>
@@ -142,6 +196,18 @@ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isInte
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.getElementById('year').textContent=new Date().getFullYear();
 
+
+const storeFilters=[...document.querySelectorAll('.store-area .filter')];
+const storeProducts=[...document.querySelectorAll('.store-area .product')];
+const storeCount=document.querySelector('.store-area #count');
+const storeEmpty=document.querySelector('.store-area #empty');
+storeFilters.forEach(button=>button.addEventListener('click',()=>{
+  storeFilters.forEach(b=>b.classList.toggle('active',b===button));
+  let shown=0;
+  storeProducts.forEach(product=>{const visible=button.dataset.filter==='all'||product.dataset.category===button.dataset.filter;product.style.display=visible?'':'none';if(visible)shown++;});
+  storeCount.textContent=shown+' produit'+(shown>1?'s':'');
+  storeEmpty.style.display=shown?'none':'block';
+}));
 </script>
 </body>
 </html>
